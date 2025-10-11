@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "707731658517",
+    "project_id": "socializer-ba164",
+    "storage_bucket": "socializer-ba164.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:707731658517:android:241581f6ada56c69c87b1c",
+        "android_client_info": {
+          "package_name": "com.example.socializer"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGMPEa_1Wflt8WPL7tAYRTzwYOgCOa4UQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
