@@ -1,9 +1,11 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:socializer/features/auth/domain/entities/app_user.dart';
 import 'package:socializer/features/auth/domain/repositories/auth_repo.dart';
 
 class FirebaseAuthRepo implements AuthRepo {
   final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
+  FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
   @override
   Future<AppUser?> loginWithEmailAndPassword(
     String email,
@@ -39,6 +41,11 @@ class FirebaseAuthRepo implements AuthRepo {
         uid: userCredential.user!.uid,
         name: name,
       );
+      await firebaseFirestore
+          .collection("users")
+          .doc(user.uid)
+          .set(user.toJason());
+
       return user;
     } catch (e) {
       throw Exception("Registration Failed !!$e");
@@ -54,7 +61,8 @@ class FirebaseAuthRepo implements AuthRepo {
   Future<AppUser?> getCurrentUser() async {
     final firebaseUser = await firebaseAuth.currentUser;
     if (firebaseUser == null) {
-      return null;    }
+      return null;
+    }
     return AppUser(email: firebaseUser.email!, name: '', uid: firebaseUser.uid);
   }
 }
