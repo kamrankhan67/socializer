@@ -98,7 +98,7 @@ class _SignupPageState extends State<SignupPage> {
               obscure: true,
             ),
             SizedBox(height: 20),
-            MyButton(text: "Login",onTap: signUp,),
+            MyButton(text: "Register",onTap: signUp,),
             SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

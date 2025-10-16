@@ -37,11 +37,16 @@ class _MyDrawerState extends State<MyDrawer> {
               MyDrawerTile(
                 title: "P R O F I L E",
                 icon: Icons.person,
-                onTap: () {
+                onTap: (){
                   Navigator.pop(context);
+
+                  final user = context.read<AuthCubit>().currentUser;
+                  String uid = user!.uid;
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => ProfilePage()),
+                    MaterialPageRoute(
+                      builder: (context) => ProfilePage(uid: uid),
+                    ),
                   );
                 },
               ),

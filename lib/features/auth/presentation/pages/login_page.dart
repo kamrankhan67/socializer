@@ -72,7 +72,7 @@ class _LoginPageState extends State<LoginPage> {
               obscure: true,
             ),
             SizedBox(height: 20),
-            MyButton(text: "Register", onTap: onLogin),
+            MyButton(text: "Login", onTap: onLogin),
             SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
